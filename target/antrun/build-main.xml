@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <taskdef resource="org/cruxframework/crux/tools/crux-tools.xml">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+    </classpath>
+  </taskdef>
+  <serviceMapper projectDir="E:\Maven\recent-transaction\target/recent-transaction">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+      <pathelement path="E:\Maven\recent-transaction\target/recent-transaction/WEB-INF//classes/"/>
+    </classpath>
+  </serviceMapper>
+  <cruxcompiler outputDir="E:\Maven\recent-transaction\target/recent-transaction" keepPagesGeneratedFiles="true" webDir="E:\Maven\recent-transaction\target/recent-transaction" pagesOutputDir="E:\Maven\recent-transaction\target/recent-transaction" pageFileExtension="html" srcDir="E:\Maven\recent-transaction\src\main\java" outputCharset="UTF-8" doNotPreCompileJavaSource="true">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+    </classpath>
+    <jvmarg value="-Xmx768M"/>
+    <jvmarg value="-Xms256M"/>
+    <arg value="-localWorkers"/>
+    <arg value="2"/>
+  </cruxcompiler>
+</target>
+</project>
